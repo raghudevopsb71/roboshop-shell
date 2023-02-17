@@ -4,11 +4,11 @@ location /images/ {
   root   /usr/share/nginx/html;
   try_files $uri /images/placeholder.jpg;
 }
-location /api/catalogue/ { proxy_pass http://localhost:8080/; }
-location /api/user/ { proxy_pass http://localhost:8080/; }
-location /api/cart/ { proxy_pass http://localhost:8080/; }
-location /api/shipping/ { proxy_pass http://localhost:8080/; }
-location /api/payment/ { proxy_pass http://localhost:8080/; }
+location /api/catalogue/ { proxy_pass http://catalogue.devopsb71.online:8080/; }
+location /api/user/ { proxy_pass http://user.devopsb71.online:8080/; }
+location /api/cart/ { proxy_pass http://cart.devopsb71.online:8080/; }
+location /api/shipping/ { proxy_pass http://shipping.devopsb71.online:8080/; }
+location /api/payment/ { proxy_pass http://payment.devopsb71.online:8080/; }
 
 location /health {
   stub_status on;

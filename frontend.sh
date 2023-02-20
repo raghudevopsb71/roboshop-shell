@@ -2,7 +2,11 @@ source common.sh
 
 print_head "Installing nginx"
 yum install nginx -y &>>${log_file}
-echo $?
+if [ $? -eq 0 ]; then
+  echo SUCCESS
+else
+  echo FAILURE
+fi
 
 print_head "Removing Old Content"
 rm -rf /usr/share/nginx/html/* &>>${log_file}

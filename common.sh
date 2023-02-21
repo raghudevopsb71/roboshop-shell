@@ -49,11 +49,11 @@ schema_setup() {
     status_check $?
   elif [ "${schema_type}" == "mysql" ]; then
     print_head "Install MySQL Client"
-    yum install mysql -y
+    yum install mysql -y &>>${log_file}
     status_check $?
 
     print_head "Load Schema"
-    mysql -h mysql.devopsb71.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql
+    mysql -h mysql.devopsb71.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>${log_file}
     status_check $?
   fi
 }

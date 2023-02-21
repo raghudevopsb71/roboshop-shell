@@ -129,7 +129,7 @@ java() {
   systemd_setup
 }
 
-java() {
+python() {
 
   print_head "Install Python"
   yum install python36 gcc python3-devel -y &>>${log_file}
